@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="nojs html" lang="ru-RU">
+ <head>
+
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta name="generator" content="2018.1.0.386"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>EditPatientCard</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="/static/css/site_global.css?crc=444006867"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/editpatientcard.css?crc=4204454042" id="pagesheet"/>
+   <link  rel="stylesheet"  href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"  crossorigin="anonymous">
+  <script src="/static/scripts/jquery-1.8.3.min.js"></script>
+  <script src="/static/scripts/jquery.maskedinput.min.js"></script>
+  <script src="/static/scripts/inputmask.js"></script>
+
+ </head>
+ <body>
+
+  <div class="clearfix borderbox" id="page"><!-- column -->
+   <div class="position_content" id="page_position_content">
+    <div class="browser_width colelem" id="u3149-bw">
+     <div id="u3149"><!-- group -->
+      <div class="clearfix" id="u3149_align_to_page">
+       <div class="clearfix grpelem" id="u3042"><!-- group -->
+        <div class="clearfix grpelem" id="pu3053"><!-- column -->
+         <div class="clip_frame colelem" id="u3053" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9563,M12=-0.2924,M21=0.2924,M22=0.9563,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14"><!-- image -->
+          <img class="block" id="u3053_img" src="/static/images/pills.png?crc=3958534910" alt="" data-heightwidthratio="1" data-image-width="110" data-image-height="110"/>
+         </div>
+         <div class="clip_frame colelem" id="u3045" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9455,M12=0.3256,M21=-0.3256,M22=0.9455,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-15" data-mu-ie-matrix-dy="-15"><!-- image -->
+          <img class="block" id="u3045_img" src="/static/images/first-aid-kit.png?crc=523093676" alt="" data-heightwidthratio="1" data-image-width="107" data-image-height="107"/>
+         </div>
+         <div class="clip_frame colelem" id="u3049" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9397,M12=0.342,M21=-0.342,M22=0.9397,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-16" data-mu-ie-matrix-dy="-16"><!-- image -->
+          <img class="block" id="u3049_img" src="/static/images/medicine.png?crc=212170396" alt="" data-heightwidthratio="1" data-image-width="114" data-image-height="114"/>
+         </div>
+        </div>
+        <div class="clearfix grpelem" id="pu3047"><!-- column -->
+         <div class="clip_frame colelem" id="u3047" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9511,M12=0.309,M21=-0.309,M22=0.9511,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-16" data-mu-ie-matrix-dy="-16"><!-- image -->
+          <img class="block" id="u3047_img" src="/static/images/syringe.png?crc=315584796" alt="" data-heightwidthratio="1" data-image-width="125" data-image-height="125"/>
+         </div>
+         <div class="clip_frame colelem" id="u3043" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9659,M12=-0.2588,M21=0.2588,M22=0.9659,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-15" data-mu-ie-matrix-dy="-15"><!-- image -->
+          <img class="block" id="u3043_img" src="/static/images/heart.png?crc=32010908" alt="" data-heightwidthratio="1" data-image-width="132" data-image-height="132"/>
+         </div>
+         <div class="clip_frame colelem" id="u3051" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9703,M12=-0.2419,M21=0.2419,M22=0.9703,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14"><!-- image -->
+          <img class="block" id="u3051_img" src="/static/images/pharmacy.png?crc=4015191175" alt="" data-heightwidthratio="1" data-image-width="132" data-image-height="132"/>
+         </div>
+        </div>
+       </div>
+
+       <form method="post">
+        {% csrf_token %}
+       <div class="rounded-corners clearfix grpelem" id="u3038"><!-- column -->
+        {% for card in Cards %}
+        <div class="clearfix colelem" id="pu3146-4"><!-- group -->
+         <div class="clearfix grpelem" id="u3146-4"><!-- content -->
+          <p id="u3146-2">Создание новой карты пациента</p>
+         </div>
+         <div class="grpelem" id="u3037"><!-- simple frame --></div>
+        </div>
+        <div class="colelem" id="u3036"><!-- simple frame --></div>
+
+        <div class="clearfix colelem" id="pu3923-4"><!-- group -->
+         <div class="clearfix grpelem" id="u3923-4"><!-- content -->
+          <p id="u3923-2">Фамилия</p>
+         </div>
+         <div class="clearfix grpelem row" id="u4076-4">
+          <p id="u4076-2" class="col">Пол</p>
+          <p id="u4076-1" class="col">Первичный прием</p>
+         </div>
+        </div>
+        <div class="clearfix colelem" id="pu3761"><!-- group -->
+         <input name="surname" value="{{card.surname}}" class="rounded-corners grpelem" id="u3761"><!-- simple frame -->
+         <div class="clearfix grpelem row"  id="pu3794">
+             <select name="gender" value="{{gender}}" class="rounded-corners grpelem col form-control" id="u3794">
+              <option>м</option>
+              <option>ж</option>
+             </select>
+             <input type="checkbox" name="initial_inspection" class="form-check-input col" id="check" value="True">
+         </div>
+        </div>
+        <div class="clearfix colelem" id="pu3998-4"><!-- group -->
+         <div class="clearfix grpelem" id="u3998-4"><!-- content -->
+          <p id="u3998-2">Имя</p>
+         </div>
+         <div class="clearfix grpelem" id="u4085-4"><!-- content -->
+          <p id="u4085-2">Полис ОМС</p>
+         </div>
+        </div>
+        <div class="clearfix colelem" id="pu3767"><!-- group -->
+         <input name="name" value="{{card.name}}" class="rounded-corners grpelem" id="u3767"><!-- simple frame --></input>
+         <input name="polis_OMS" value="{{card.polis_OMS}}" class="rounded-corners grpelem" id="u3797"><!-- simple frame --></input>
+        </div>
+        <div class="clearfix colelem" id="pu4001-4"><!-- group -->
+         <div class="clearfix grpelem" id="u4001-4"><!-- content -->
+          <p id="u4001-2">Отчество</p>
+         </div>
+         <div class="clearfix grpelem" id="u4091-4"><!-- content -->
+          <p id="u4091-2">СНИЛС</p>
+         </div>
+        </div>
+        <div class="clearfix colelem" id="pu3770"><!-- group -->
+         <input name="patronymic" value="{{card.patronymic}}" class="rounded-corners grpelem" id="u3770"><!-- simple frame --></input>
+         <input name="SNILS" value="{{card.SNILS}}" class="rounded-corners grpelem" id="u3800"><!-- simple frame --></input>
+        </div>
+        <div class="clearfix colelem" id="pu4004-4"><!-- group -->
+         <div class="clearfix grpelem" id="u4004-4"><!-- content -->
+          <p id="u4004-2">Рабочий телефон</p>
+         </div>
+         <div class="clearfix grpelem" id="u4094-4"><!-- content -->
+          <p id="u4094-2">Паспортные данные</p>
+         </div>
+        </div>
+        <div class="clearfix colelem" id="ppu3773"><!-- group -->
+         <div class="clearfix grpelem" id="pu3773"><!-- column -->
+          <input name="work_phone" value="{{card.work_phone}}" class="rounded-corners colelem" id="u3773"><!-- simple frame --></input>
+          <div class="clearfix colelem" id="u4007-4"><!-- content -->
+           <p id="u4007-2">Домашний телефон</p>
+          </div>
+          <input name="home_phone" value="{{card.home_phone}}" class="rounded-corners colelem" id="u3776"><!-- simple frame --></input>
+         </div>
+         <textarea name="passport_data" class="rounded-corners grpelem" id="u3803">{{card.passport_data}}</textarea>
+        </div>
+        <div class="clearfix colelem" id="pu4010-4"><!-- group -->
+         <div class="clearfix grpelem" id="u4010-4"><!-- content -->
+          <p id="u4010-2">Электронная почта</p>
+         </div>
+         <div class="clearfix grpelem" id="u4097-4"><!-- content -->
+          <p id="u4097-2">Место работы</p>
+         </div>
+        </div>
+        <div class="clearfix colelem" id="ppu3779"><!-- group -->
+         <div class="clearfix grpelem" id="pu3779"><!-- column -->
+          <input name="e_mail" value="{{card.e_mail}}"  class="rounded-corners colelem" id="u3779"><!-- simple frame --></input>
+          <div class="clearfix colelem" id="u4013-4"><!-- content -->
+           <p id="u4013-2">Адрес прописки</p>
+          </div>
+          <textarea name="registration_address" class="rounded-corners colelem" id="u3782">{{card.registration_address}}</textarea>
+          <div class="clearfix colelem" id="u4016-4"><!-- content -->
+           <p id="u4016-2">Адрес проживания</p>
+          </div>
+         </div>
+         <div class="clearfix grpelem" id="pu3806"><!-- column -->
+          <textarea name="place_of_work" class="rounded-corners colelem" id="u3806">{{card.place_of_work}}</textarea>
+          <div class="clearfix colelem" id="u4100-4"><!-- content -->
+           <p id="u4100-2">Участок</p>
+          </div>
+          <input name="sector" value="{{card.sector}}" class="rounded-corners colelem" id="u3809"><!-- simple frame --></input>
+         </div>
+        </div>
+        <div class="clearfix colelem" id="pu3785"><!-- group -->
+         <textarea name="residence_address" class="rounded-corners grpelem" id="u3785">{{card.residence_address}}</textarea>
+         <div class="clearfix grpelem" id="pu4103-4"><!-- column -->
+          <div class="clearfix colelem" id="u4103-4"><!-- content -->
+           <p id="u4103-2">Дата следующего приёма</p>
+          </div>
+          <input name="date_of_next_meet" type="date" value="{{card.date_of_next_meet|date:'Y-m-d'}}" min="{{ datetime_now|date:'Y-m-d' }}" class="rounded-corners colelem" id="u3812"><!-- simple frame --></input>
+          <div class="clearfix colelem" id="u4106-4"><!-- content -->
+           <p id="u4106-2">Резус фактор</p>
+          </div>
+         </div>
+        </div>
+        <div class="clearfix colelem" id="pu4019-4"><!-- group -->
+         <div class="clearfix grpelem" id="u4019-4"><!-- content -->
+          <p id="u4019-2">Группа крови</p>
+         </div>
+         <input name="rhesus_factor" value="{{card.rhesus_factor}}" class="rounded-corners grpelem" id="u3815"><!-- simple frame --></input>
+        </div>
+        <div class="clearfix colelem" id="pu3788"><!-- group -->
+         <input name="blood_type" value="{{card.blood_type}}" class="rounded-corners grpelem" id="u3788"><!-- simple frame --></input>
+         {% endfor %}
+         <a class="nonblock nontext rounded-corners clearfix grpelem" id="u4109-4" href="{% url 'RegistratorSearch' %}"><!-- content --><p id="u4109-2">Отмена</p></a>
+         <input type="submit" value="Сохранить" class="nonblock nontext rounded-corners clearfix grpelem" id="u3137-4" href="{% url 'RegistratorSearch' %}">
+        </div>
+       </div>
+        </form>
+
+       <div class="clearfix grpelem" id="pu3055"><!-- group -->
+        <div class="clearfix grpelem" id="u3055"><!-- group -->
+         <div class="clearfix grpelem" id="pu3060"><!-- column -->
+          <div class="clip_frame colelem" id="u3060" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.1392,M12=0.9903,M21=-0.9903,M22=0.1392,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-8" data-mu-ie-matrix-dy="-8" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u3060_img" src="/static/images/syringe.png?crc=315584796" alt="" width="125" height="125"/>
+          </div>
+          <div class="clip_frame colelem" id="u3062" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9397,M12=0.342,M21=-0.342,M22=0.9397,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-19" data-mu-ie-matrix-dy="-19" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u3062_img" src="/static/images/heart.png?crc=32010908" alt="" width="132" height="132"/>
+          </div>
+          <div class="clip_frame colelem" id="u3058" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9205,M12=0.3907,M21=-0.3907,M22=0.9205,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-21" data-mu-ie-matrix-dy="-21" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u3058_img" src="/static/images/pharmacy.png?crc=4015191175" alt="" width="132" height="132"/>
+          </div>
+         </div>
+         <div class="clearfix grpelem" id="pu3066"><!-- column -->
+          <div class="colelem" id="u3066" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9563,M12=-0.2924,M21=0.2924,M22=0.9563,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- rasterized frame -->
+           <img id="u3066_img" alt="" width="110" height="110" src="/static/images/pills.png?crc=4156728703"/>
+          </div>
+          <div class="clip_frame colelem" id="u3056" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.8988,M12=-0.4384,M21=0.4384,M22=0.8988,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-18" data-mu-ie-matrix-dy="-18" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u3056_img" src="/static/images/first-aid-kit.png?crc=523093676" alt="" width="107" height="107"/>
+          </div>
+          <div class="clip_frame colelem" id="u3064" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9563,M12=-0.2924,M21=0.2924,M22=0.9563,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u3064_img" src="/static/images/medicine.png?crc=212170396" alt="" width="114" height="114"/>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-corners clearfix grpelem" id="u3030"><!-- group -->
+         <div class="rounded-corners clearfix grpelem" id="u3033"><!-- group -->
+          <div class="clip_frame grpelem" id="u3031"><!-- image -->
+           <img class="block" id="u3031_img" src="/static/images/doctor.png?crc=3953821147" alt="" data-heightwidthratio="1" data-image-width="114" data-image-height="114"/>
+          </div>
+         </div>
+         <div class="clearfix grpelem" id="pu3029-4"><!-- column -->
+          <div class="clearfix colelem" id="u3029-4"><!-- content -->
+           <p>Пользователь:</p>
+          </div>
+          <div class="clearfix colelem" id="u3028-4"><!-- content -->
+           <p>Регистратор</p>
+          </div>
+          <a class="nonblock nontext rounded-corners clearfix colelem" id="u3027-4" href="{% url 'registry' %}"><!-- content --><p id="u3027-2"><span id="u3027">Выход</span></p></a>
+         </div>
+
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+ $(document).ready(function () {
+ $("#u3773").mask("+7 (999) 999-9999");
+ $("#u3776").mask("+7 (999) 999-9999");
+  $("#u3797").mask("9999-9999-9999-9999");
+ $("#u3800").mask("999-999-999 99");
+ $("#u3779").inputmask("email")
+ });
+</script>
+ </body>
+</html>

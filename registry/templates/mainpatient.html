@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="nojs html" lang="ru-RU">
+ <head>
+
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta name="generator" content="2018.1.0.386"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>MainPatient</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="/static/css/site_global.css?crc=444006867"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/adminschedule.css?crc=356168397" id="pagesheet"/>
+    <!--/*
+
+*/
+-->
+ </head>
+ <body>
+
+  <div class="clearfix borderbox" id="page"><!-- column -->
+   <div class="position_content" id="page_position_content">
+    <div class="browser_width colelem" id="u6608-bw">
+     <div id="u6608"><!-- group -->
+      <div class="clearfix" id="u6608_align_to_page">
+       <div class="clearfix grpelem" id="u6584"><!-- group -->
+        <div class="clearfix grpelem" id="pu6591"><!-- column -->
+         <div class="clip_frame colelem" id="u6591" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9563,M12=-0.2924,M21=0.2924,M22=0.9563,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14"><!-- image -->
+          <img class="block" id="u6591_img" src="/static/images/pills.png?crc=3958534910" alt="" data-heightwidthratio="1" data-image-width="110" data-image-height="110"/>
+         </div>
+         <div class="clip_frame colelem" id="u6595" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9455,M12=0.3256,M21=-0.3256,M22=0.9455,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-15" data-mu-ie-matrix-dy="-15"><!-- image -->
+          <img class="block" id="u6595_img" src="/static/images/first-aid-kit.png?crc=523093676" alt="" data-heightwidthratio="1" data-image-width="107" data-image-height="107"/>
+         </div>
+         <div class="clip_frame colelem" id="u6593" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9397,M12=0.342,M21=-0.342,M22=0.9397,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-16" data-mu-ie-matrix-dy="-16"><!-- image -->
+          <img class="block" id="u6593_img" src="/static/images/medicine.png?crc=212170396" alt="" data-heightwidthratio="1" data-image-width="114" data-image-height="114"/>
+         </div>
+        </div>
+        <div class="clearfix grpelem" id="pu6587"><!-- column -->
+         <div class="clip_frame colelem" id="u6587" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9511,M12=0.309,M21=-0.309,M22=0.9511,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-16" data-mu-ie-matrix-dy="-16"><!-- image -->
+          <img class="block" id="u6587_img" src="/static/images/syringe.png?crc=315584796" alt="" data-heightwidthratio="1" data-image-width="125" data-image-height="125"/>
+         </div>
+         <div class="clip_frame colelem" id="u6589" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9659,M12=-0.2588,M21=0.2588,M22=0.9659,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-15" data-mu-ie-matrix-dy="-15"><!-- image -->
+          <img class="block" id="u6589_img" src="/static/images/heart.png?crc=32010908" alt="" data-heightwidthratio="1" data-image-width="132" data-image-height="132"/>
+         </div>
+         <div class="clip_frame colelem" id="u6585" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9703,M12=-0.2419,M21=0.2419,M22=0.9703,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14"><!-- image -->
+          <img class="block" id="u6585_img" src="/static/images/pharmacy.png?crc=4015191175" alt="" data-heightwidthratio="1" data-image-width="132" data-image-height="132"/>
+         </div>
+        </div>
+       </div>
+       <div class="rounded-corners clearfix grpelem" id="u6567"><!-- column -->
+        <div class="position_content" id="u6567_position_content">
+         <div class="clearfix colelem" id="pu6568"><!-- group -->
+          <p id="welcome">Добро пожаловать</p>
+         </div>
+         <div class="colelem" id="u6569"><!-- simple frame --></div>
+
+         <form action="{% url 'SearchSchedule' %}">
+         <div class="clearfix colelem" id="u6602"><!-- group -->
+          <input name="search" value="{{shedule_name}}" class="rounded-corners clearfix grpelem" id="u6605"><!-- group -->
+           <div class="rounded-corners clearfix grpelem" id="u6606"><!-- group -->
+            <button class="clip_frame grpelem" id="u6603"><!-- image -->
+             <img class="block" id="u6603_img" src="/static/images/loupe.png?crc=161762781" alt="" data-heightwidthratio="1" data-image-width="37" data-image-height="37"/>
+            </button>
+           </div>
+          </input>
+         </div>
+         </form>
+
+         <div class="rounded-corners colelem" id="u6598"><!-- simple frame -->
+          <form>
+          <table>
+           <tr>
+            <td id="doctor-name">Доктор</td>
+            <td id="day-name">День</td>
+            <td colspan="4" id="time-name">Время работы</td>
+           </tr>
+          {% for schedule in schedules %}
+           <tr>
+           <td id="doctor" valign="top" align="center" >{{schedule.id_doctor}}</td>
+           <td id="day">{{schedule.day}}</td>
+           <td id="start_hour">{{schedule.start_hour}}:</td>
+            {% for key, value in start_minute.items %}
+           {% if key == schedule.id %}<td id="start_minute">{{ value }}</td>{% endif %}
+            {% endfor %}
+           <td id="end_hour">{{schedule.end_hour}}:</td>
+            {% for key, value in end_minute.items %}
+           {% if key == schedule.id %}<td id="end_minute">{{value}}</td>{% endif %}
+            {% endfor %}
+          </tr>
+           {% endfor %}
+          </table>
+           <div class="pagination">
+            <span class="step-links">
+             {% if schedules.has_previous %}
+              <div class="rounded-corners clearfix grpelem" id="u6599-4"><!-- content -->
+                <a href="?page={{ schedules.previous_page_number }}" id="u6599-2">Назад</a>
+              </div>
+             {% endif %}
+             <span class="current">
+              Page {{ schedules.number }} of {{ schedules.paginator.num_pages }}.
+             </span>
+            {% if schedules.has_next %}
+             <div class="rounded-corners clearfix grpelem" id="u6601-4"><!-- content -->
+               <a href="?page={{ schedules.next_page_number }}" id="u6601-2">Вперед</a>
+             </div>
+            {% endif %}
+            </span>
+           </div>
+           </form>
+         </div>
+        </div>
+       </div>
+       <div class="clearfix grpelem" id="pu6571"><!-- group -->
+        <div class="clearfix grpelem" id="u6571"><!-- group -->
+         <div class="clearfix grpelem" id="pu6582"><!-- column -->
+          <div class="clip_frame colelem" id="u6582" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.1392,M12=0.9903,M21=-0.9903,M22=0.1392,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-8" data-mu-ie-matrix-dy="-8" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u6582_img" src="/static/images/syringe.png?crc=315584796" alt="" width="125" height="125"/>
+          </div>
+          <div class="clip_frame colelem" id="u6578" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9397,M12=0.342,M21=-0.342,M22=0.9397,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-19" data-mu-ie-matrix-dy="-19" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u6578_img" src="/static/images/heart.png?crc=32010908" alt="" width="132" height="132"/>
+          </div>
+          <div class="clip_frame colelem" id="u6576" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9205,M12=0.3907,M21=-0.3907,M22=0.9205,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-21" data-mu-ie-matrix-dy="-21" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u6576_img" src="/static/images/pharmacy.png?crc=4015191175" alt="" width="132" height="132"/>
+          </div>
+         </div>
+         <div class="clearfix grpelem" id="pu6572"><!-- column -->
+          <div class="colelem" id="u6572" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9563,M12=-0.2924,M21=0.2924,M22=0.9563,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- rasterized frame -->
+           <img id="u6572_img" alt="" width="110" height="110" src="/static/images/pills-u6572.png?crc=4156728703"/>
+          </div>
+          <div class="clip_frame colelem" id="u6574" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.8988,M12=-0.4384,M21=0.4384,M22=0.8988,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-18" data-mu-ie-matrix-dy="-18" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u6574_img" src="/static/images/first-aid-kit.png?crc=523093676" alt="" width="107" height="107"/>
+          </div>
+          <div class="clip_frame colelem" id="u6580" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9563,M12=-0.2924,M21=0.2924,M22=0.9563,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u6580_img" src="/static/images/medicine.png?crc=212170396" alt="" width="114" height="114"/>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-corners clearfix grpelem" id="arka"><!-- group -->
+         <a class="nonblock nontext rounded-corners clearfix grpelem" id="u6555-4" href="{% url 'registry' %}"><!-- content --><p id="u6556-2"><span id="u6556">Войти</span></p></a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+</body>
+</html>

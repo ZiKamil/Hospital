@@ -1,0 +1,120 @@
+<manifest alg="2" build="2018.1.0.386" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="registration.com" resolutions="1x" timestamp="1606040053105">
+  <folder name="css">
+    <file name="site_global.css" crc="444006867"/>
+    <file name="index.css" crc="100520475" ref="index"/>
+    <file name="registratorsearch.css" crc="48181278" ref="registratorsearch"/>
+    <file name="createnewpatientcard.css" crc="4204454042" ref="createnewpatientcard"/>
+    <file name="makeanappointment.css" crc="3953269555" ref="makeanappointment"/>
+    <file name="mainmenuregistrator.css" crc="206269620" ref="mainmenuregistrator"/>
+  </folder>
+  <folder name="fonts">
+    <file name="robotobold.woff" crc="4104003278"/>
+    <file name="robotobold.eot" crc="4131386107"/>
+    <file name="robotobold.svg" crc="330726623"/>
+    <file name="robotobolditalic.woff" crc="360960419"/>
+    <file name="robotobolditalic.eot" crc="58679119"/>
+    <file name="robotobolditalic.svg" crc="118141198"/>
+    <file name="robotoitalic.woff" crc="104677710"/>
+    <file name="robotoitalic.eot" crc="3858835102"/>
+    <file name="robotoitalic.svg" crc="3799320366"/>
+    <file name="roboto.woff" crc="4248159737"/>
+    <file name="roboto.eot" crc="3815141164"/>
+    <file name="roboto.svg" crc="324518025"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment"/>
+    <file name="museutils.js" crc="340535759" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment"/>
+    <file name="whatinput.js" crc="86476730" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment"/>
+    <file name="museconfig.js" crc="4286661555" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment"/>
+    <file name="jquery.watch.js" crc="51536988" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment"/>
+    <file name="require.js" crc="7928878" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment"/>
+  </folder>
+  <folder name="images">
+    <file name="pills.png" crc="3958534910" seo="true" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment">
+      <caption webpage="index" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+    </file>
+    <file name="first-aid-kit.png" crc="523093676" seo="true" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+    </file>
+    <file name="medicine.png" crc="212170396" seo="true" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+    </file>
+    <file name="syringe.png" crc="315584796" seo="true" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+    </file>
+    <file name="heart.png" crc="32010908" seo="true" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+    </file>
+    <file name="pharmacy.png" crc="4015191175" seo="true" ref="index:mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+    </file>
+    <file name="pills-u598.png" crc="4156728703" ref="index"/>
+    <file name="pills-u1092.png" crc="4156728703" ref="mainmenuregistrator"/>
+    <file name="doctor.png" crc="3953821147" seo="true" ref="mainmenuregistrator:registratorsearch:createnewpatientcard:makeanappointment">
+      <caption webpage="makeanappointment" alt=""/>
+      <caption webpage="registratorsearch" alt=""/>
+      <caption webpage="createnewpatientcard" alt=""/>
+      <caption webpage="mainmenuregistrator" alt=""/>
+    </file>
+    <file name="loupe.png" crc="161762781" seo="true" ref="registratorsearch">
+      <caption webpage="registratorsearch" alt=""/>
+    </file>
+    <file name="pills-u2002.png" crc="4156728703" ref="registratorsearch"/>
+    <file name="pills-u3066.png" crc="4156728703" ref="createnewpatientcard"/>
+    <file name="pills-u4434.png" crc="4156728703" ref="makeanappointment"/>
+  </folder>
+  <file name="index.html" crc="61675238" seo="true" mt="1606039589480" redirect="true"/>
+  <file name="mainmenuregistrator.html" crc="4124846451" seo="true" mt="1606039884375" redirect="true"/>
+  <file name="registratorsearch.html" crc="3776822035" seo="true" mt="1606039884373" redirect="true"/>
+  <file name="createnewpatientcard.html" crc="495769308" seo="true" mt="1606039660337" redirect="true"/>
+  <file name="makeanappointment.html" crc="3917163015" seo="true" mt="1606039884377" redirect="true"/>
+</manifest>

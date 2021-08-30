@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="nojs html" lang="ru-RU">
+ <head>
+
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta name="generator" content="2018.1.0.386"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>NewSchedule</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="/static/css/site_global.css?crc=444006867"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/newschedule.css?crc=4033877088" id="pagesheet"/>
+  
+  
+ </head>
+ <body>
+
+  <div class="clearfix borderbox" id="page"><!-- column -->
+   <div class="position_content" id="page_position_content">
+    <div class="browser_width colelem" id="u6974-bw">
+     <div id="u6974"><!-- group -->
+      <div class="clearfix" id="u6974_align_to_page">
+       <div class="clearfix grpelem" id="u6989"><!-- group -->
+        <div class="clearfix grpelem" id="pu7000"><!-- column -->
+         <div class="clip_frame colelem" id="u7000" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9563,M12=-0.2924,M21=0.2924,M22=0.9563,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14"><!-- image -->
+          <img class="block" id="u7000_img" src="/static/images/pills.png?crc=3958534910" alt="" data-heightwidthratio="1" data-image-width="110" data-image-height="110"/>
+         </div>
+         <div class="clip_frame colelem" id="u6992" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9455,M12=0.3256,M21=-0.3256,M22=0.9455,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-15" data-mu-ie-matrix-dy="-15"><!-- image -->
+          <img class="block" id="u6992_img" src="/static/images/first-aid-kit.png?crc=523093676" alt="" data-heightwidthratio="1" data-image-width="107" data-image-height="107"/>
+         </div>
+         <div class="clip_frame colelem" id="u6994" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9397,M12=0.342,M21=-0.342,M22=0.9397,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-16" data-mu-ie-matrix-dy="-16"><!-- image -->
+          <img class="block" id="u6994_img" src="/static/images/medicine.png?crc=212170396" alt="" data-heightwidthratio="1" data-image-width="114" data-image-height="114"/>
+         </div>
+        </div>
+        <div class="clearfix grpelem" id="pu6998"><!-- column -->
+         <div class="clip_frame colelem" id="u6998" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9511,M12=0.309,M21=-0.309,M22=0.9511,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-16" data-mu-ie-matrix-dy="-16"><!-- image -->
+          <img class="block" id="u6998_img" src="/static/images/syringe.png?crc=315584796" alt="" data-heightwidthratio="1" data-image-width="125" data-image-height="125"/>
+         </div>
+         <div class="clip_frame colelem" id="u6990" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9659,M12=-0.2588,M21=0.2588,M22=0.9659,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-15" data-mu-ie-matrix-dy="-15"><!-- image -->
+          <img class="block" id="u6990_img" src="/static/images/heart.png?crc=32010908" alt="" data-heightwidthratio="1" data-image-width="132" data-image-height="132"/>
+         </div>
+         <div class="clip_frame colelem" id="u6996" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9703,M12=-0.2419,M21=0.2419,M22=0.9703,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14"><!-- image -->
+          <img class="block" id="u6996_img" src="/static/images/pharmacy.png?crc=4015191175" alt="" data-heightwidthratio="1" data-image-width="132" data-image-height="132"/>
+         </div>
+        </div>
+       </div>
+       <form method="post">
+        {% csrf_token %}
+       <div class="rounded-corners clearfix grpelem" id="u7111"><!-- column -->
+        <div class="clearfix colelem" id="pu7110"><!-- group -->
+         <div class="grpelem" id="u7110"><!-- simple frame --></div>
+         <div class="clearfix grpelem" id="u7107-4"><!-- content -->
+          <p id="u7107-2">Добавление нового графика</p>
+         </div>
+        </div>
+        <div class="colelem" id="u7112"><!-- simple frame --></div>
+        <div class="clearfix colelem" id="u7089-4"><!-- content -->
+         <p id="u7089-2">Врач</p>
+        </div>
+        <form method="get">
+        <select name="id_doctor"  class="rounded-corners clearfix colelem" id="u7094">
+         {% for doctor in doctors %}
+         <option>{{doctor.id}} {{doctor.surname}} {{doctor.name}}</option>
+         {% endfor %}
+        </select>
+        </form>
+        <div class="clearfix colelem" id="u7275-4"><!-- content -->
+         <p id="u7275-2">День</p>
+        </div>
+        <input name="day" type="date"  value="{{day}}" min="{{ datetime_now|date:'Y-m-d' }}" max="{{ in_weeks|date:'Y-m-d' }}" class="rounded-corners colelem" id="u7095"><!-- simple frame --></input>
+        <p class="clearfix colelem"  id="day">{{none_day}}</p>
+        <div class="clearfix colelem" id="u7290-4"><!-- content -->
+         <p id="u7290-2">Время на прием</p>
+        </div>
+        <input name="time_reception" value="{{time_reception}}" class="rounded-corners colelem" id="u7287"><!-- simple frame --></input>
+        <p class="clearfix colelem"  id="time_reception">{{none_time_reception}}</p>
+        <div class="clearfix colelem" id="pu7284-4"><!-- group -->
+         <div class="clearfix grpelem" id="u7284-4"><!-- content -->
+          <p id="u7281-2">C</p>
+          <p id="min">:</p>
+         </div>
+         <input name="start_hour" value="{{start_hour}}" class="rounded-corners grpelem" id="u7101"><!-- simple frame --></input>
+         <input name="start_minute" value="{{start_minute}}" class="rounded-corners grpelem" id="u7101-1"><!-- simple frame --></input>
+         <div class="clearfix grpelem" id="u7281-4"><!-- content -->
+          <p id="u7285-2">До</p>
+          <p id="mind">:</p>
+         </div>
+         <input name="end_hour" value="{{end_hour}}" class="rounded-corners grpelem" id="u7293"><!-- simple frame --></input>
+         <input name="end_minute" value="{{end_minute}}" class="rounded-corners grpelem" id="u7293-1"><!-- simple frame --></input>
+        </div>
+        <p class="clearfix colelem"  id="time">{{none_time}}</p>
+        <div class="clearfix colelem" id="pu7103-4"><!-- group -->
+         <a class="nonblock nontext rounded-corners clearfix grpelem" id="u7103-4" href="{% url 'AdminSchedule' %}"><!-- content --><p id="u7103-2">Отмена</p></a>
+         <input type="submit" value="Сохранить" class="nonblock nontext rounded-corners clearfix grpelem" id="u7100-4" href="{% url 'AdminSchedule' %}">
+        </div>
+       </div>
+        </form>
+
+       <div class="clearfix grpelem" id="pu6976"><!-- group -->
+        <div class="clearfix grpelem" id="u6976"><!-- group -->
+         <div class="clearfix grpelem" id="pu6979"><!-- column -->
+          <div class="clip_frame colelem" id="u6979" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.1392,M12=0.9903,M21=-0.9903,M22=0.1392,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-8" data-mu-ie-matrix-dy="-8" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u6979_img" src="/static/images/syringe.png?crc=315584796" alt="" width="125" height="125"/>
+          </div>
+          <div class="clip_frame colelem" id="u6977" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9397,M12=0.342,M21=-0.342,M22=0.9397,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-19" data-mu-ie-matrix-dy="-19" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u6977_img" src="/static/images/heart.png?crc=32010908" alt="" width="132" height="132"/>
+          </div>
+          <div class="clip_frame colelem" id="u6981" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9205,M12=0.3907,M21=-0.3907,M22=0.9205,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-21" data-mu-ie-matrix-dy="-21" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u6981_img" src="/static/images/pharmacy.png?crc=4015191175" alt="" width="132" height="132"/>
+          </div>
+         </div>
+         <div class="clearfix grpelem" id="pu6983"><!-- column -->
+          <div class="colelem" id="u6983" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9563,M12=-0.2924,M21=0.2924,M22=0.9563,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- rasterized frame -->
+           <img id="u6983_img" alt="" width="110" height="110" src="/static/images/pills-u6983.png?crc=4156728703"/>
+          </div>
+          <div class="clip_frame colelem" id="u6987" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.8988,M12=-0.4384,M21=0.4384,M22=0.8988,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-18" data-mu-ie-matrix-dy="-18" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u6987_img" src="/static/images/first-aid-kit.png?crc=523093676" alt="" width="107" height="107"/>
+          </div>
+          <div class="clip_frame colelem" id="u6985" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=0.9563,M12=-0.2924,M21=0.2924,M22=0.9563,SizingMethod='auto expand')" data-mu-ie-matrix-dx="-14" data-mu-ie-matrix-dy="-14" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- image -->
+           <img class="block" id="u6985_img" src="/static/images/medicine.png?crc=212170396" alt="" width="114" height="114"/>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-corners clearfix grpelem" id="u7083"><!-- group -->
+         <div class="rounded-corners clearfix grpelem" id="u7079"><!-- group -->
+          <div class="clip_frame grpelem" id="u7077"><!-- image -->
+           <img class="block" id="u7077_img" src="/static/images/manager.png?crc=4127548086" alt="" data-heightwidthratio="1" data-image-width="119" data-image-height="119"/>
+          </div>
+         </div>
+         <div class="clearfix grpelem" id="u7082-4"><!-- content -->
+          <p>Пользователь:</p>
+         </div>
+         <a class="nonblock nontext rounded-corners clearfix grpelem" id="u7080-4" href="index.html"><!-- content --><p id="u7080-2"><span id="u7080">Выход</span></p></a>
+         <div class="clearfix grpelem" id="u7809-4"><!-- content -->
+          <p>Администратор</p>
+         </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
